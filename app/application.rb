@@ -1,8 +1,13 @@
 class Application
 
+  @@items = []
   def call(env)
     resp = Rack::Response.new
-  elsif req.path.split(/items/).last
+    req = Rack::Request.new(env)
 
+    if req.path.match(/items/)
+
+    item = req.path.split(/items/).last
+    if
 
 end
