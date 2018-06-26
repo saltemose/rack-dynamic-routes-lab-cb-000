@@ -6,8 +6,8 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      if Item.include?(item_name)
-        Item.all.find {|i| i.name == item_name}
+      if Item.all.find {|i| i.name == item_name}
+        item = Item.all.find {|i| i.name == item_name}
         resp.write item.price
         resp.status 200
     else
